@@ -8,7 +8,7 @@ public class FollowingPoints : MonoBehaviour
     private int _currentPoint;
     public float _speed;
 
-    private void Start()
+    private void Awake()
     {
         points = new Transform[_path.childCount];
 
@@ -29,7 +29,7 @@ public class FollowingPoints : MonoBehaviour
         }
     }
 
-    private Vector3 MoveToNextPoint()
+    private void MoveToNextPoint()
     {
         _currentPoint++;
 
@@ -40,6 +40,5 @@ public class FollowingPoints : MonoBehaviour
 
         Vector3 currentPointVector = points[_currentPoint].position;
         transform.forward = currentPointVector - transform.position;
-        return currentPointVector;
     }
 }
